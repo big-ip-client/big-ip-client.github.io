@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering the Big-IP Edge Client: A Guide to Advanced Settings</title>
+    <meta name="description" content="Unlock the full potential of your Big-IP Edge Client by learning how to configure advanced settings for optimized performance, enhanced security, and a better user experience.">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Mastering the Big-IP Edge Client: A Guide to Advanced Settings">
+    <meta property="og:description" content="Unlock the full potential of your Big-IP Edge Client by learning how to configure advanced settings for optimized performance, enhanced security, and a better user experience.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://big-ip-client.github.io/guide/configuring-advanced-settings-in-big-ip-edge-client.html">
+    <meta property="og:image" content="https://big-ip-client.github.io/images/articles/2.jpg">
+    <meta property="og:site_name" content="Big-IP Edge Client Fan Site">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Configuring Advanced Settings in Big-IP Edge Client",
+      "author": {
+        "@type": "Organization",
+        "name": "Big-IP Edge Client Fan Site Team"
+      },
+      "datePublished": "2025-12-14",
+      "image": "https://big-ip-client.github.io/images/articles/2.jpg",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Big-IP Edge Client Fan Site",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://big-ip-client.github.io/images/favicon.ico"
+        }
+      },
+      "description": "An in-depth guide to the advanced configuration options available in the F5 Big-IP Edge Client, helping power users and administrators fine-tune their VPN experience."
+    }
+    </script>
+    
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Big-IP Edge Client</a>
+            <ul class="nav-links">
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../about-us.html">About Us</a></li>
+                <li><a href="index.html">Guide</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../history.html">History</a></li>
+            <li><a href="../about-us.html">About Us</a></li>
+            <li><a href="index.html">Guide</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <section class="about" style="padding-top: 120px;">
+        <div class="container">
+            <h1 class="section-title">Configuring Advanced Settings in Big-IP Edge Client</h1>
+            <div class="about-content" style="grid-template-columns: 1fr;">
+                <div class="about-text">
+                    <p>While the Big-IP Edge Client is designed for simplicity and ease of use, it also contains a host of advanced settings that can be tweaked to optimize performance, customize behavior, and troubleshoot issues. For power users and IT administrators, understanding these options is key to unlocking the client's full potential. This guide will delve into some of the most useful advanced configuration settings and explain how to use them effectively. Please note that some of these settings may be restricted or pre-configured by your organization's IT policy.</p>
+
+                    <h3>Understanding Connection Properties</h3>
+                    <p>The main window of the Big-IP Edge Client provides more than just a connect button. By navigating to the "Advanced" or "Properties" section (the exact wording may vary by version), you can access detailed information about your connection. This includes the server address, the security policies being applied, and connection statistics. This screen is invaluable for troubleshooting. For example, the statistics tab can show you the amount of data sent and received, compression ratios, and network latency, which can help diagnose performance bottlenecks. It’s the first place you should look if you are experiencing slow speeds or intermittent connectivity.</p>
+
+                    <h3>Configuring Auto-Connect and Always-On VPN</h3>
+                    <p>One of the most powerful features for ensuring consistent security is the "Always-On" VPN capability. When enabled, the Big-IP Edge Client will automatically attempt to establish a secure connection whenever an internet connection is detected. This is a "set it and forget it" feature that provides a persistent security layer without requiring user intervention. To configure this:</p>
+                    <ol>
+                        <li>Access Preferences: Open the client's preferences or settings menu.</li>
+                        <li>Locate Connection Settings: Find the section related to connection behavior.</li>
+                        <li>Enable Auto-Connect: Look for an option like "Connect automatically" or "Enable Always-On VPN." Your administrator may have also configured this to be enforced, in which case the option will be greyed out.</li>
+                    </ol>
+                    <p>This setting is highly recommended for company-owned devices to ensure that all traffic is protected by default, significantly reducing the risk of users accidentally transmitting sensitive data over an unsecured network.</p>
+
+                    <h3>Managing Server List and Failover</h3>
+                    <p>For organizations with multiple VPN gateways for redundancy or geographic load balancing, you can manage the list of servers within the client. While your primary server is usually configured for you, you can sometimes add backup or alternative servers. The client is often configured to automatically failover to a secondary server if the primary one is unreachable. In the advanced server settings, you can view this list of servers and, if permitted by your administrator, re-order them or manually select a different server. This can be useful if you know a particular gateway is closer to your physical location or is experiencing less traffic, potentially giving you better performance.</p>
+
+                    <h3>Exploring Logging for Troubleshooting</h3>
+                    <p>When you encounter a persistent issue, the client's logging capabilities are your best friend. The Big-IP Edge Client maintains detailed logs of its activity, which can provide critical clues about what's going wrong. To access and use these logs:</p>
+                    <ol>
+                        <li>Enable Verbose Logging: In the advanced settings or preferences, look for a "Logging" tab. Here, you can change the log level. For troubleshooting, set the level to "Verbose" or "Debug." This will cause the client to record a much higher level of detail.</li>
+                        <li>Reproduce the Issue: With verbose logging enabled, try to connect or perform the action that is failing.</li>
+                        <li>View and Save the Log: Go back to the logging section and use the "View Log" or "Save Log As" button. The log file is a plain text file that contains a chronological record of the client's operations, including connection attempts, policy evaluations, and any error messages.</li>
+                        <li>Analyze or Send to IT: You can scan the log for error messages or keywords. More often, you will save this log file and send it to your IT support team. The detailed information it contains is exactly what they need to diagnose complex issues related to the Big-IP Edge Client.</li>
+                    </ol>
+                    <p>By familiarizing yourself with these advanced settings, you can transform the Big-IP Edge Client from a simple connection tool into a finely-tuned instrument for secure and efficient remote access, giving you more control and insight into your secure connection.</p>
+                </div>
+                <img src="../images/articles/2.jpg" alt="A computer screen showing advanced settings and code" style="width: 100%; border-radius: 10px; margin-top: 2rem;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>This is an unofficial fan website. We are not affiliated with F5, Inc.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="../privacy.html">Privacy</a>
+                    <a href="../terms-of-use.html">Terms of Use</a>
+                    <a href="mailto:support@big-ip-client.github.io">support@big-ip-client.github.io</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

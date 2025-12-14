@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Simple Guide to Download and Install the Big-IP Edge Client</title>
+    <meta name="description" content="Follow our step-by-step guide on how to download and install the Big-IP Edge Client on your Windows, macOS, or Linux device to establish secure remote access to your corporate network.">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="A Simple Guide to Download and Install the Big-IP Edge Client">
+    <meta property="og:description" content="Follow our step-by-step guide on how to download and install the Big-IP Edge Client on your Windows, macOS, or Linux device to establish secure remote access to your corporate network.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://big-ip-client.github.io/guide/how-to-download-and-install-big-ip-edge-client.html">
+    <meta property="og:image" content="https://big-ip-client.github.io/images/articles/1.jpg">
+    <meta property="og:site_name" content="Big-IP Edge Client Fan Site">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "How to Download and Install the Big-IP Edge Client",
+      "author": {
+        "@type": "Organization",
+        "name": "Big-IP Edge Client Fan Site Team"
+      },
+      "datePublished": "2025-12-14",
+      "image": "https://big-ip-client.github.io/images/articles/1.jpg",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Big-IP Edge Client Fan Site",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://big-ip-client.github.io/images/favicon.ico"
+        }
+      },
+      "description": "A detailed, user-friendly guide walking you through the process of downloading and installing the F5 Big-IP Edge Client for secure VPN access."
+    }
+    </script>
+    
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Big-IP Edge Client</a>
+            <ul class="nav-links">
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../about-us.html">About Us</a></li>
+                <li><a href="index.html">Guide</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../history.html">History</a></li>
+            <li><a href="../about-us.html">About Us</a></li>
+            <li><a href="index.html">Guide</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <section class="about" style="padding-top: 120px;">
+        <div class="container">
+            <h1 class="section-title">How to Download and Install Big-IP Edge Client</h1>
+            <div class="about-content" style="grid-template-columns: 1fr;">
+                <div class="about-text">
+                    <p>The Big-IP Edge Client is a powerful tool for establishing a secure connection to your organization's network. Whether you are working from home, traveling, or just need to access corporate resources remotely, this client provides a robust and secure SSL VPN tunnel. This guide will walk you through the entire process, from downloading the correct version for your operating system to installing it and making your first connection. Our goal is to make this process as simple and clear as possible, even for those who may not be deeply technical.</p>
+
+                    <h3>Step 1: Obtaining the F5 Big-IP Edge Client</h3>
+                    <p>The first and most crucial step is to get the installation files. In most corporate environments, your IT department will provide a specific, secure portal from which to download the Big-IP Edge Client. This is the highly recommended method, as it ensures you are getting the version of the client that is tested and approved for your company's specific BIG-IP APM (Access Policy Manager) configuration.</p>
+                    <p>Typically, this involves navigating to your company's VPN web portal in a browser. After you log in with your corporate credentials, you will usually see a welcome screen with links to download the client. The portal is smart; it will often auto-detect your operating system (Windows, macOS, or Linux) and present you with the correct download link. If not, you will see options to manually select the appropriate installer. Clicking the link will initiate the Big-IP Edge Client download. Be sure to save the installer file to a location you can easily find, like your Desktop or Downloads folder.</p>
+
+                    <h3>Step 2: The Installation Process on Windows</h3>
+                    <p>Installing the client on a Windows machine is a straightforward process familiar to anyone who has installed software before.</p>
+                    <ol>
+                        <li>Locate the Installer: Navigate to the folder where you saved the downloaded file. It will typically be named something like `BIGIPEdgeClient.exe`.</li>
+                        <li>Run as Administrator: Right-click on the installer file and select "Run as administrator." This is important as the client needs to install system-level network components, and administrator privileges are required to do so. You may see a User Account Control (UAC) prompt asking for permission; click "Yes" to proceed.</li>
+                        <li>Follow the Setup Wizard: The installation wizard will launch. It will guide you through the necessary steps. You will be asked to accept the license agreement. After that, you can typically proceed with the default installation settings, which are suitable for most users. The wizard will copy the necessary files and configure the network components.</li>
+                        <li>Complete the Installation: Once the process is finished, you will see a confirmation screen. Click "Finish" to exit the wizard. The Big-IP Edge Client is now installed on your system. You should see its icon in your system tray or be able to find it in your Start Menu.</li>
+                    </ol>
+
+                    <h3>Step 3: Installation on macOS</h3>
+                    <p>The process for macOS is similarly user-friendly, using the standard Mac application installation method.</p>
+                    <ol>
+                        <li>Open the Disk Image: Find the downloaded file, which will be a `.dmg` file (e.g., `mac_f5vpn.dmg`). Double-click this file to mount it as a virtual disk on your desktop.</li>
+                        <li>Run the Installer: A new Finder window will open showing the contents of the disk image. It will contain an installer package, usually with a `.pkg` extension. Double-click this package to begin the installation.</li>
+                        <li>Follow the Installer Prompts: The macOS installer will guide you through the process. You will need to agree to the software license agreement and enter your Mac's administrator password to authorize the installation. The installer will place the Big-IP Edge Client application in your `/Applications` folder and configure the necessary system extensions.</li>
+                        <li>Security & Privacy Permissions: On modern versions of macOS, you may be prompted to allow the client's system extension in your `System Settings` under `Security & Privacy`. The installer should guide you, but if the VPN fails to connect, this is the first place to check. Ensure any components from F5 Networks, Inc. are allowed.</li>
+                    </ol>
+
+                    <h3>Step 4: First-Time Configuration and Connection</h3>
+                    <p>With the client installed, the final step is to configure it to connect to your company's server.</p>
+                    <ol>
+                        <li>Launch the Client: Open the Big-IP Edge Client from your Start Menu (Windows) or Applications folder (macOS).</li>
+                        <li>Add a Server: The first time you launch the client, it will be blank. Click the "Add Server" or "Change Server" button. You will be prompted to enter the address of your company's VPN server. This URL will be provided by your IT department (e.g., `vpn.mycompany.com`).</li>
+                        <li>Connect: Once the server is added, click the "Connect" button. The client will establish a connection to the server and prompt you for your username and password. Depending on your company's security setup, you may also be required to enter a second factor of authentication (like a code from an authenticator app).</li>
+                        <li>You're In!: Once authenticated, the client will finalize the connection, and the icon will indicate you are connected. Your computer is now securely connected to your corporate network, and you can access internal resources as if you were in the office.</li>
+                    </ol>
+                    <p>You have now successfully completed the Big-IP Edge Client download and installation. You are ready to work securely from anywhere.</p>
+                </div>
+                <img src="../images/articles/1.jpg" alt="A person installing software on a laptop" style="width: 100%; border-radius: 10px; margin-top: 2rem;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>This is an unofficial fan website. We are not affiliated with F5, Inc.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="../privacy.html">Privacy</a>
+                    <a href="../terms-of-use.html">Terms of Use</a>
+                    <a href="mailto:support@big-ip-client.github.io">support@big-ip-client.github.io</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

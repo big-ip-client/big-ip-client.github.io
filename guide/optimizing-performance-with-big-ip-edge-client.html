@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips for Optimizing Big-IP Edge Client Performance</title>
+    <meta name="description" content="Learn how to optimize the performance of your Big-IP Edge Client with our expert tips on network settings, split tunneling, and choosing the right gateway.">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Tips for Optimizing Big-IP Edge Client Performance">
+    <meta property="og:description" content="Learn how to optimize the performance of your Big-IP Edge Client with our expert tips on network settings, split tunneling, and choosing the right gateway.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://big-ip-client.github.io/guide/optimizing-performance-with-big-ip-edge-client.html">
+    <meta property="og:image" content="https://big-ip-client.github.io/images/articles/5.jpg">
+    <meta property="og:site_name" content="Big-IP Edge Client Fan Site">
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Optimizing Performance with Big-IP Edge Client",
+      "author": {
+        "@type": "Organization",
+        "name": "Big-IP Edge Client Fan Site Team"
+      },
+      "datePublished": "2025-12-14",
+      "image": "https://big-ip-client.github.io/images/articles/5.jpg",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Big-IP Edge Client Fan Site",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://big-ip-client.github.io/images/favicon.ico"
+        }
+      },
+      "description": "A guide offering practical tips and insights for users and administrators to maximize the performance and speed of the F5 Big-IP Edge Client VPN."
+    }
+    </script>
+    
+    <link href="../assets/css/style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="logo">Big-IP Edge Client</a>
+            <ul class="nav-links">
+                <li><a href="../history.html">History</a></li>
+                <li><a href="../about-us.html">About Us</a></li>
+                <li><a href="index.html">Guide</a></li>
+            </ul>
+            <div class="mobile-menu-toggle" id="mobileMenuToggle">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <ul class="mobile-nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../history.html">History</a></li>
+            <li><a href="../about-us.html">About Us</a></li>
+            <li><a href="index.html">Guide</a></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <section class="about" style="padding-top: 120px;">
+        <div class="container">
+            <h1 class="section-title">Optimizing Performance with Big-IP Edge Client</h1>
+            <div class="about-content" style="grid-template-columns: 1fr;">
+                <div class="about-text">
+                    <p>A secure VPN connection is essential, but it shouldn't come at the cost of a slow and frustrating user experience. The Big-IP Edge Client is engineered for high performance, but various factors from your local network to the server-side configuration can impact speed. This guide provides actionable tips for both end-users and administrators to ensure you're getting the fastest, most reliable connection possible. By paying attention to a few key areas, you can significantly enhance your remote access performance.</p>
+
+                    <h3>For End-Users: Optimizing Your Local Environment</h3>
+                    <p>Your local network setup is the foundation of your VPN performance. Before pointing fingers at the corporate network, it's crucial to ensure your end is optimized.</p>
+                    <ul>
+                        <li>Prioritize a Wired Connection: While Wi-Fi is convenient, it's susceptible to interference, signal degradation, and channel congestion. Whenever possible, plug your computer directly into your router with an Ethernet cable. This provides the most stable and fastest possible connection, eliminating a major source of latency and packet loss.</li>
+                        <li>Optimize Your Wi-Fi: If a wired connection isn't feasible, optimize your Wi-Fi. Move closer to your router, ensure there are minimal physical obstructions, and consider using the 5GHz band if available, as it's typically less congested than the 2.4GHz band. Restarting your router can also help by forcing it to select a less crowded channel.</li>
+                        <li>Reduce Network Contention: Are other people in your household streaming 4K video or engaging in heavy online gaming? Are large files being downloaded in the background on your computer? These activities consume significant bandwidth and can slow your VPN connection to a crawl. Try to limit non-essential, high-bandwidth activities during work hours.</li>
+                        <li>Close Unnecessary Applications: Applications running in the background can consume CPU, memory, and network resources. Close any apps you aren't using to free up system resources for the Big-IP Edge Client and your work-related tasks.</li>
+                    </ul>
+
+                    <h3>For Administrators: Server-Side and Policy-Based Optimization</h3>
+                    <p>Administrators have a powerful toolkit within the BIG-IP APM to fine-tune performance for all users connecting with the Big-IP Edge Client.</p>
+                    <ul>
+                        <li>Implement Split Tunneling Intelligently: This is arguably the most impactful performance optimization. A full tunnel forces all of the user's traffic—from internal application access to their Spotify stream—through the corporate data center. This consumes corporate bandwidth and adds latency. Configure split tunneling to only route traffic destined for specific corporate IP ranges through the VPN. Allow trusted, high-bandwidth traffic like Office 365, Zoom, and other SaaS applications to go directly to the internet from the user's machine. The Big-IP Edge Client fully supports this, dramatically improving the user experience.</li>
+                        <li>Enable Compression: BIG-IP APM can compress data before sending it over the VPN tunnel. In the Network Access settings, you can enable LZO compression. This is particularly effective for highly compressible traffic like text, documents, and web pages, reducing the amount of data that needs to be transmitted and improving throughput, especially on slower connections.</li>
+                        <li>Optimize DTLS and TLS: The Big-IP Edge Client can use both DTLS (Datagram Transport Layer Security) and TLS (Transport Layer Security). DTLS, which runs over UDP, is generally preferred for VPNs as it avoids the "TCP-over-TCP" problem and can handle latency and packet loss more gracefully. Ensure that DTLS is enabled on your BIG-IP APM connectivity profile and that firewalls between the client and the server allow UDP traffic on the appropriate port (usually 443). The client will automatically fall back to TLS if DTLS fails, but performance will be better over DTLS.</li>
+                        <li>Geographic Load Balancing: For a global workforce, having users in Asia connect to a VPN gateway in North America is a recipe for poor performance. Use F5's Global Traffic Manager (GTM) or other DNS-based load balancing to direct users to the geographically closest VPN gateway. This simple step can drastically reduce latency and improve application responsiveness.</li>
+                    </ul>
+                    <p>By combining user-side best practices with smart, server-side configuration, the Big-IP Edge Client can deliver a secure remote access experience that is not only robust but also fast and responsive, ensuring that your remote workforce remains productive and efficient.</p>
+                </div>
+                <img src="../images/articles/5.jpg" alt="A network diagram showing optimized data flow" style="width: 100%; border-radius: 10px; margin-top: 2rem;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-left">
+                    <p>This is an unofficial fan website. We are not affiliated with F5, Inc.</p>
+                </div>
+                <div class="footer-right">
+                    <a href="../privacy.html">Privacy</a>
+                    <a href="../terms-of-use.html">Terms of Use</a>
+                    <a href="mailto:support@big-ip-client.github.io">support@big-ip-client.github.io</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>
